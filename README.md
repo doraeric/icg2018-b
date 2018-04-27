@@ -10,8 +10,8 @@ In this project, you will develop a physics-based tower crane simulator. You als
 3. **Operation Control**: You need to develop the functions for operating the tower crane to perform an erection task by an input device, such as keyboard, mouse or gamepad. (15%)
 4. **Written Report**: In the written report, you have to briefly explain the major functions or classes you have developed and list the snapshots of the drawing (at least one for each function). If you would like to obtain extra credits, please also list the additional works you have done. (50%)
 5. **Extra Credits**: The following works might obtain up to 10% extra credits.
-  - Fancy scenes rendering – ground, sky, environment etc.
-  - Collision notification – reactions of collision detection
+   - Fancy scenes rendering - ground, sky, environment etc.
+   - Collision notification - reactions of collision detection
 
 ### Grading
 This project will be graded primarily on the program output. TA and I will grade your projects by running them through various tests.
