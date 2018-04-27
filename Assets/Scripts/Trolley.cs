@@ -9,10 +9,10 @@ public class Trolley : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.W)){
+		if(Input.GetKey(KeyCode.W) && transform.localPosition.z < 17f){
 			transform.Translate(Vector3.forward * Time.deltaTime);
 		}
-		if(Input.GetKey(KeyCode.S)){
+		if(Input.GetKey(KeyCode.S) && transform.localPosition.z > 1f){
 			transform.Translate(Vector3.back * Time.deltaTime);
 		}
 	}
