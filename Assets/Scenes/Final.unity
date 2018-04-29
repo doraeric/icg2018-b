@@ -2470,8 +2470,8 @@ MonoBehaviour:
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
-    m_Style: 0
-    m_Time: 1
+    m_Style: 1
+    m_Time: 2
   m_CustomBlends: {fileID: 0}
   m_ParentHash:
   - m_Hash: 210248539
@@ -12007,7 +12007,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 10
-        minScalar: 10
+        minScalar: 3
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -16903,8 +16903,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -17435,7 +17435,7 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 0
-      cycleCount: 1
+      cycleCount: 2
       repeatInterval: 0.01
   SizeModule:
     enabled: 1
@@ -20468,7 +20468,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 8
-  m_LookAt: {fileID: 615599366}
+  m_LookAt: {fileID: 1550423365}
   m_Follow: {fileID: 808496413}
   m_Lens:
     FieldOfView: 40
