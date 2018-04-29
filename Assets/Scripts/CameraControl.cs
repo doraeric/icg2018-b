@@ -29,6 +29,8 @@ public class CameraControl : MonoBehaviour {
 		Position_4 = new Vector3 (10, 0, 0) + target.position;
 		// right View
 		Position_6 = new Vector3 (-10, 0, 0) + target.position;
+
+		UIManager.Instance.ShowPanel("HintPanel");
 		UIManager.Instance.ShowPanel("HelpPanel");
 	}
 
