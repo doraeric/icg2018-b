@@ -34,10 +34,14 @@ public class CameraControl : MonoBehaviour {
 		Position_6 = new Vector3 (10, 0, 0) + target.position;
 		// back View
 		Position_8 = new Vector3 (0, 0, 10) + target.position;
+		UIManager.Instance.ShowPanel("HelpPanel");
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKey(KeyCode.H) && !UIManager.Instance.IsPanelLive("HelpPanel")) {
+			UIManager.Instance.ShowPanel("HelpPanel");
+		}
 		if (Camera.main.orthographic) {
 			Projection_Mode_String = "Orthographic";
 		}
