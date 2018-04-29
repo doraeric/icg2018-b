@@ -15,6 +15,10 @@ public class CameraControl : MonoBehaviour {
 	string Projection_Mode_String;
 	Rect Projection_Mode_Rect;
 
+	public GameObject mainCam;
+	public GameObject driverCam;
+	bool isMain = true;
+
 	// Use this for initialization
 	void Start () {
 		originalPosition = Camera.main.transform.position;
@@ -89,6 +93,13 @@ public class CameraControl : MonoBehaviour {
 			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_6;
 			Camera.main.transform.LookAt(target);
+		}
+
+		if (Input.GetKey("v")) {
+			Debug.Log("V");
+			mainCam.SetActive(!isMain);
+			driverCam.SetActive(isMain);
+			isMain=!isMain;
 		}
 
 		// Translate Camera by arrow
