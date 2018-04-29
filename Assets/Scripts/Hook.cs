@@ -14,6 +14,8 @@ public class Hook : MonoBehaviour {
 	GameObject aimTarget;
 	GameObject colliderObj;
 
+	public Animator cameraSwitcher;
+
 	// Use this for initialization
 	void Start () {
 		joint2trolley = GetComponent<ConfigurableJoint>();
@@ -32,12 +34,14 @@ public class Hook : MonoBehaviour {
 		// Move up and down
 		if(Input.GetKey("left shift")){
 			if(joint2trolley.anchor.y < ropeLen) {
+				cameraSwitcher.Play("followHook");
 				joint2trolley.anchor += Vector3.up * Time.deltaTime;
 				rb.WakeUp();
 			}
 		}
 		if(Input.GetKey("space")){
 			if(joint2trolley.anchor.y > .7f) {
+				cameraSwitcher.Play("followHook");
 				joint2trolley.anchor -= Vector3.up * Time.deltaTime;
 				rb.WakeUp();
 			}

@@ -15,8 +15,8 @@ public class CameraControl : MonoBehaviour {
 	string Projection_Mode_String;
 	Rect Projection_Mode_Rect;
 
-	public GameObject mainCam;
-	public GameObject driverCam;
+	public Camera mainCam;
+	public Camera driverCam;
 	bool isMain = true;
 
 	// Use this for initialization
@@ -94,8 +94,9 @@ public class CameraControl : MonoBehaviour {
 
 		if (Input.GetKey("v")) {
 			Debug.Log("V");
-			mainCam.SetActive(!isMain);
-			driverCam.SetActive(isMain);
+			mainCam.enabled=!isMain;
+			driverCam.enabled=isMain;
+			originalPosition = Camera.main.transform.position;
 			isMain=!isMain;
 		}
 
@@ -128,7 +129,7 @@ public class CameraControl : MonoBehaviour {
 		// Click mouse left button and drag to look around
 		if (Input.GetKey(KeyCode.Mouse1)) {
 			//Rotate horizontally by the X direction of mouse movement
-			Camera.main.transform.RotateAround(transform.position, Vector3.up,
+			Camera.main.transform.RotateAround(Camera.main.transform.position, Vector3.up,
 												Input.GetAxis ("Mouse X") * 100f *Time.deltaTime);
 
 			//Rotate vertically by the Y direction of mouse movement
