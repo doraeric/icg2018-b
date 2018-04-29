@@ -72,8 +72,11 @@ public class Hook : MonoBehaviour {
 			}
 		}
 		// Hint
-		if (colliderObj)
-			GameManager.Instance.hintMsg = "Press E to pickup/drop.";
+		if (joint2obj) {
+			GameManager.Instance.hintMsg = "Press E to drop item.";
+		}
+		else if (colliderObj)
+			GameManager.Instance.hintMsg = "Press E to pickup item.";
 		else if (aimTarget)
 			GameManager.Instance.hintMsg = "Press left shift/space to move down/up hook.";
 		else
