@@ -136,7 +136,7 @@ public class CameraControl : MonoBehaviour {
 		}
 
 		// Scroll mouse midde wheel to move forward and back
-		if (Input.GetAxis ("Mouse ScrollWheel") != 0) {
+		if (Input.GetAxis ("Mouse ScrollWheel") != 0 && isMain) {
 			Camera.main.transform.position += Input.GetAxis ("Mouse ScrollWheel") *　
 												Camera.main.transform.forward * 100f　* Time.deltaTime;
 		}
