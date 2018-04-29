@@ -8,7 +8,6 @@ public class CameraControl : MonoBehaviour {
 	Vector3 originalPosition;
 
 	Vector3 Position_5;
-	Vector3 Position_2;
 	Vector3 Position_4;
 	Vector3 Position_6;
 	Vector3 Position_8;
@@ -23,17 +22,13 @@ public class CameraControl : MonoBehaviour {
 		Projection_Mode_Rect = new Rect (10, 10, 100, 50);
 
 		// Top View
-		Position_5 = new Vector3 (0, 20, 0) + target.position;
-
-		// Complete the Remaining Part
+		Position_8 = new Vector3 (0, 20, 0) + target.position;
 		// Front View
-		Position_2 = new Vector3 (0, 0, -10) + target.position;
+		Position_5 = new Vector3 (0, 0, 10) + target.position;
 		// left View
-		Position_4 = new Vector3 (-10, 0, 0) + target.position;
+		Position_4 = new Vector3 (10, 0, 0) + target.position;
 		// right View
-		Position_6 = new Vector3 (10, 0, 0) + target.position;
-		// back View
-		Position_8 = new Vector3 (0, 0, 10) + target.position;
+		Position_6 = new Vector3 (-10, 0, 0) + target.position;
 		UIManager.Instance.ShowPanel("HelpPanel");
 	}
 
@@ -49,12 +44,13 @@ public class CameraControl : MonoBehaviour {
 			Projection_Mode_String = "Perspective";
 		}
 
-		if (Input.GetKey(KeyCode.P)) {
-			Camera.main.orthographic = false;
-		}
-		if (Input.GetKey(KeyCode.O)) {
-			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
+		if (Input.GetKeyDown("1")) {
+			if (Camera.main.orthographic) {
+				Camera.main.orthographic = false;
+			} else {
+				Camera.main.orthographic = true;
+				Camera.main.orthographicSize = 10;
+			}
 		}
 
 		if (Input.GetKey("0")) {
@@ -63,39 +59,33 @@ public class CameraControl : MonoBehaviour {
 			Camera.main.transform.LookAt(target);
 		}
 
-		if (Input.GetKey("5")) {
+		// Top
+		if (Input.GetKey("8")) {
 			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
-			Camera.main.transform.position = Position_5;
+			Camera.main.orthographicSize = 18;
+			Camera.main.transform.position = Position_8;
 			Camera.main.transform.LookAt(target, Vector3.forward);
 		}
 
-		// Complete the Remaining Part
-		if (Input.GetKey("2")) {
+		// Front
+		if (Input.GetKey("5")) {
 			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
-			Camera.main.transform.position = Position_2;
+			Camera.main.orthographicSize = 14;
+			Camera.main.transform.position = Position_5;
 			Camera.main.transform.LookAt(target);
 		}
 
 		if (Input.GetKey("4")) {
 			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
+			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_4;
 			Camera.main.transform.LookAt(target);
 		}
 
 		if (Input.GetKey("6")) {
 			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
+			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_6;
-			Camera.main.transform.LookAt(target);
-		}
-
-		if (Input.GetKey("8")) {
-			Camera.main.orthographic = true;
-			Camera.main.orthographicSize = 10;
-			Camera.main.transform.position = Position_8;
 			Camera.main.transform.LookAt(target);
 		}
 
