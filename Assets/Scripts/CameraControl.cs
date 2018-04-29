@@ -56,14 +56,14 @@ public class CameraControl : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKey("0")) {
+		if (Input.GetKey("0") && isMain) {
 			Camera.main.orthographic = false;
 			Camera.main.transform.position = originalPosition;
 			Camera.main.transform.LookAt(target);
 		}
 
 		// Top
-		if (Input.GetKey("8")) {
+		if (Input.GetKey("8") && isMain) {
 			Camera.main.orthographic = true;
 			Camera.main.orthographicSize = 18;
 			Camera.main.transform.position = Position_8;
@@ -71,21 +71,21 @@ public class CameraControl : MonoBehaviour {
 		}
 
 		// Front
-		if (Input.GetKey("5")) {
+		if (Input.GetKey("5") && isMain) {
 			Camera.main.orthographic = true;
 			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_5;
 			Camera.main.transform.LookAt(target);
 		}
 
-		if (Input.GetKey("4")) {
+		if (Input.GetKey("4") && isMain) {
 			Camera.main.orthographic = true;
 			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_4;
 			Camera.main.transform.LookAt(target);
 		}
 
-		if (Input.GetKey("6")) {
+		if (Input.GetKey("6") && isMain) {
 			Camera.main.orthographic = true;
 			Camera.main.orthographicSize = 14;
 			Camera.main.transform.position = Position_6;
@@ -93,7 +93,6 @@ public class CameraControl : MonoBehaviour {
 		}
 
 		if (Input.GetKey("v")) {
-			Debug.Log("V");
 			mainCam.enabled=!isMain;
 			driverCam.enabled=isMain;
 			originalPosition = Camera.main.transform.position;
@@ -102,27 +101,27 @@ public class CameraControl : MonoBehaviour {
 
 		// Translate Camera by arrow
 		// Camera move forward
-		if (Input.GetKey(KeyCode.UpArrow)) {
+		if (Input.GetKey(KeyCode.UpArrow) && isMain) {
 			Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 5;
 		}
 		// Camera move backward
-		if (Input.GetKey(KeyCode.DownArrow)) {
+		if (Input.GetKey(KeyCode.DownArrow) && isMain) {
 			Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 5;
 		}
 		// Camera move right
-		if (Input.GetKey(KeyCode.RightArrow)) {
+		if (Input.GetKey(KeyCode.RightArrow) && isMain) {
 			Camera.main.transform.position += Camera.main.transform.right * Time.deltaTime * 5;
 		}
 		// Camera move left
-		if (Input.GetKey(KeyCode.LeftArrow)) {
+		if (Input.GetKey(KeyCode.LeftArrow) && isMain) {
 			Camera.main.transform.position -= Camera.main.transform.right * Time.deltaTime * 5;
 		}
 		// Camera move up
-		if (Input.GetKey("'")) {
+		if (Input.GetKey("'") && isMain) {
 			Camera.main.transform.position += Camera.main.transform.up * Time.deltaTime * 5;
 		}
-		// Camera move left
-		if (Input.GetKey("/")) {
+		// Camera move down
+		if (Input.GetKey("/") && isMain) {
 			Camera.main.transform.position -= Camera.main.transform.up * Time.deltaTime * 5;
 		}
 

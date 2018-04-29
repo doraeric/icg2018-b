@@ -19,5 +19,10 @@ public class Trolley : MonoBehaviour {
 			cameraSwitcher.Play("followTrolley");
 			transform.Translate(Vector3.back * Time.deltaTime);
 		}
+
+
+		if (Input.GetKeyUp("w") || Input.GetKeyUp("s")) {
+			cameraSwitcher.Play("missionless");
+		}
 	}
 }

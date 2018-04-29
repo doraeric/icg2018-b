@@ -14,6 +14,7 @@ public class Hook : MonoBehaviour {
 	GameObject aimTarget;
 	GameObject colliderObj;
 
+	public GameObject colliderEffect;
 	public Animator cameraSwitcher;
 
 	// Use this for initialization
@@ -47,6 +48,11 @@ public class Hook : MonoBehaviour {
 			}
 		}
 
+
+		if (Input.GetKeyUp("left shift") || Input.GetKeyUp("space")) {
+			cameraSwitcher.Play("missionless");
+		}
+
 		// Raycast
 		if (Physics.Raycast(joint2trolley.connectedBody.position, Vector3.down, out hit, ropeLen)) {
 			if (hit.collider.GetComponent<Pickable>()) {
@@ -69,9 +75,11 @@ public class Hook : MonoBehaviour {
 				joint2obj.connectedBody = colliderObj.GetComponent<Rigidbody>();
 				if (joint2obj.connectedBody == null)
 					Destroy(joint2obj);
+					colliderEffect.SetActive(false);
 				Debug.Log(joint2obj.connectedBody);
 			}
 			else if (joint2obj) {
+				colliderEffect.SetActive(true);
 				Destroy(joint2obj);
 			}
 		}
@@ -90,11 +98,14 @@ public class Hook : MonoBehaviour {
 	// Collide
 	void OnTriggerEnter (Collider other) {
 		if (aimTarget != null && aimTarget == other.gameObject) {
+			colliderEffect.transform.position = other.gameObject.transform.position;
+			colliderEffect.SetActive(true);
 			colliderObj = aimTarget;
 		}
 	}
 	void OnTriggerExit  (Collider other) {
 		if (colliderObj)
+			colliderEffect.SetActive(false);
 			colliderObj = null;
 	}
 }

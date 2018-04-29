@@ -20,5 +20,9 @@ public class Jib : MonoBehaviour {
 			transform.Rotate(Vector3.up * Time.deltaTime * 10);
 		}
 
+		if (Input.GetKeyUp("a") || Input.GetKeyUp("d")) {
+			cameraSwitcher.Play("missionless");
+		}
+
 	}
 }
