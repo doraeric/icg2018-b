@@ -40,3 +40,8 @@ ehthumbs.db
 # Editors generated #
 # ================= #
 *.swp
+
+# ================ #
+# Project Settings #
+# ================ #
+!/Assets/ProCore/ProBuilder/Icons/
