@@ -118,11 +118,11 @@ public class CameraControl : MonoBehaviour {
 		}
 		// Camera move up
 		if (Input.GetKey("'") && isMain) {
-			Camera.main.transform.position += Camera.main.transform.up * Time.deltaTime * 5;
+			Camera.main.transform.position += Vector3.up * Time.deltaTime * 5;
 		}
 		// Camera move down
 		if (Input.GetKey("/") && isMain) {
-			Camera.main.transform.position -= Camera.main.transform.up * Time.deltaTime * 5;
+			Camera.main.transform.position -= Vector3.up * Time.deltaTime * 5;
 		}
 
 		// Click mouse left button and drag to look around
