@@ -2471,7 +2471,7 @@ MonoBehaviour:
     m_MinDuration: 0
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 1.5
   m_CustomBlends: {fileID: 0}
   m_ParentHash:
   - m_Hash: 210248539
@@ -5809,7 +5809,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 10
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 10
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 1315254644}
@@ -5819,14 +5819,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068893542}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.56, z: -8}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 30, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1315254644}
   m_Father: {fileID: 659662879}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1072908745 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 950252022d9c3f249949807e663ee15a, type: 3}
@@ -15203,7 +15203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372180878}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5492315, y: 26.010002, z: 7.022338}
+  m_LocalPosition: {x: 0.54188764, y: 26.010002, z: 7.022338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1007342016}
@@ -21523,7 +21523,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1848608936}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5492315, y: 26.300003, z: 7.022338}
+  m_LocalPosition: {x: 0.54188764, y: 26.300003, z: 7.022338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
