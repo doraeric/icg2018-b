@@ -92,7 +92,7 @@ public class CameraControl : MonoBehaviour {
 			Camera.main.transform.LookAt(target);
 		}
 
-		if (Input.GetKey("v")) {
+		if (Input.GetKeyDown("v")) {
 			mainCam.enabled=!isMain;
 			driverCam.enabled=isMain;
 			originalPosition = Camera.main.transform.position;
