@@ -75,11 +75,9 @@ public class Hook : MonoBehaviour {
 				joint2obj.connectedBody = colliderObj.GetComponent<Rigidbody>();
 				if (joint2obj.connectedBody == null)
 					Destroy(joint2obj);
-					colliderEffect.SetActive(false);
 				Debug.Log(joint2obj.connectedBody);
 			}
 			else if (joint2obj) {
-				colliderEffect.SetActive(true);
 				Destroy(joint2obj);
 			}
 		}
@@ -93,19 +91,24 @@ public class Hook : MonoBehaviour {
 			GameManager.Instance.hintMsg = "Press left shift/space to move down/up hook.";
 		else
 			GameManager.Instance.hintMsg = "";
+
+		if (colliderObj && !joint2obj) {
+			colliderEffect.SetActive(true);
+		}else{
+			colliderEffect.SetActive(false);
+		}
 	}
 
 	// Collide
 	void OnTriggerEnter (Collider other) {
 		if (aimTarget != null && aimTarget == other.gameObject) {
 			colliderEffect.transform.position = other.gameObject.transform.position;
-			colliderEffect.SetActive(true);
 			colliderObj = aimTarget;
 		}
 	}
+
 	void OnTriggerExit  (Collider other) {
 		if (colliderObj)
-			colliderEffect.SetActive(false);
 			colliderObj = null;
 	}
 }
