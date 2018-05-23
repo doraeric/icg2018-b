@@ -44,4 +44,4 @@ ehthumbs.db
 # ================ #
 # Project Settings #
 # ================ #
-!/Assets/ProCore/ProBuilder/Icons/
+!/Assets/**/Icons/
